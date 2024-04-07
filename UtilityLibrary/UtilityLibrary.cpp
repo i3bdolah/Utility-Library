@@ -138,4 +138,13 @@ int main()
 	cout << "After : Swap(char1, char2)" << endl;
 	cout << "\tchar 1 = " << char1 << endl;
 	cout << "\tchar 2 = " << char2 << endl;
+
+	Date Date1 = Date(1,1,2000), Date2 = Date(31, 12, 2000);
+	cout << "Before" << endl;
+	cout << "\tDate 1 = " << Date1.DateToString(); << endl;
+	cout << "\tDate 2 = " << Date2.DateToString(); << endl;
+	Utility::Swap(Date1, Date2);
+	cout << "After : Swap(Date1, Date2)" << endl;
+	cout << "\tDate 1 = " << Date1.DateToString(); << endl;
+	cout << "\tDate 2 = " << Date2.DateToString(); << endl;
 }

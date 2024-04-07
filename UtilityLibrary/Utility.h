@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 #include <stdlib.h>     /* srand, rand */
+#include "Date.h"
 
 class Utility
 {
@@ -392,5 +393,8 @@ public:
 		char temp = value1;
 		value1 = value2;
 		value2 = temp;
+	}
+	static void Swap(Date& value1, Date& value2) {
+		Date::SwapTwoDates(value1, value2);
 	}
 };
