@@ -398,54 +398,70 @@ public:
 		Date::SwapTwoDates(value1, value2);
 	}
 
-	string PrintNumberTextName(int num) {
-		if (num == 0)
+	static string NumberToText(int Number)
+	{
+
+		if (Number == 0)
 		{
 			return "";
 		}
-		if (num >= 1 && num <= 19)
+
+		if (Number >= 1 && Number <= 19)
 		{
-			string arr[] = { "", "One","Two","Three","Four","Five","Six","Seven", "Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen", "Fifteen","Sixteen","Seventeen","Eighteen","Nineteen" };
-			return arr[num] + " ";
+			string arr[] = { "", "One","Two","Three","Four","Five","Six","Seven",
+		"Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen",
+		  "Fifteen","Sixteen","Seventeen","Eighteen","Nineteen" };
+
+			return  arr[Number] + " ";
+
 		}
-		if (num >= 20 && num <= 99)
+
+		if (Number >= 20 && Number <= 99)
 		{
 			string arr[] = { "","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety" };
-			return arr[num] + " " + PrintNumberTextName(num % 10);
+			return  arr[Number / 10] + " " + NumberToText(Number % 10);
 		}
-		if (num >= 100 && num <= 199)
+
+		if (Number >= 100 && Number <= 199)
 		{
-			return "One Hundred " + PrintNumberTextName(num % 100);
+			return  "One Hundred " + NumberToText(Number % 100);
 		}
-		if (num >= 200 && num <= 999)
+
+		if (Number >= 200 && Number <= 999)
 		{
-			return PrintNumberTextName(num / 100) + "Hundreds " + PrintNumberTextName(num % 100);
+			return   NumberToText(Number / 100) + "Hundreds " + NumberToText(Number % 100);
 		}
-		if (num >= 1000 && num <= 1999)
+
+		if (Number >= 1000 && Number <= 1999)
 		{
-			return "One Thousand " + PrintNumberTextName(num % 1000);
+			return  "One Thousand " + NumberToText(Number % 1000);
 		}
-		if (num >= 2000 && num <= 999999)
+
+		if (Number >= 2000 && Number <= 999999)
 		{
-			return PrintNumberTextName(num / 1000) + "Thousands " + PrintNumberTextName(num % 1000);
+			return   NumberToText(Number / 1000) + "Thousands " + NumberToText(Number % 1000);
 		}
-		if (num >= 1000000 && num <= 1999999)
+
+		if (Number >= 1000000 && Number <= 1999999)
 		{
-			return "One Million " + PrintNumberTextName(num % 1000000);
+			return  "One Million " + NumberToText(Number % 1000000);
 		}
-		if (num >= 2000000 && num <= 999999999)
+
+		if (Number >= 2000000 && Number <= 999999999)
 		{
-			return PrintNumberTextName(num / 1000000) + "Millions " + PrintNumberTextName(num % 1000000);
+			return   NumberToText(Number / 1000000) + "Millions " + NumberToText(Number % 1000000);
 		}
-		if (num >= 1000000000 && num <= 1999999999)
+
+		if (Number >= 1000000000 && Number <= 1999999999)
 		{
-			return "One Billion " + PrintNumberTextName(num % 1000000000);
+			return  "One Billion " + NumberToText(Number % 1000000000);
 		}
 		else
 		{
-			return PrintNumberTextName(num / 1000000000) + "Billions " + PrintNumberTextName(num % 1000000000);
-
+			return   NumberToText(Number / 1000000000) + "Billions " + NumberToText(Number % 1000000000);
 		}
+
+
 	}
 
 };
